@@ -16,7 +16,7 @@
         
 ## Usage
 
- [here](https://drive.google.com/file/d/1pyyYbjzL2LxBov6Am9ZGgEOfxxd_e2o0/view)
+ [video demonstration here](https://drive.google.com/file/d/1pyyYbjzL2LxBov6Am9ZGgEOfxxd_e2o0/view)
         
 ## Contributing
     
