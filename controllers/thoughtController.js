@@ -80,25 +80,55 @@ module.exports = {
         }
 
     },
-
-    // create reaction
-
-    async createReaction (req,res) {
+//create reaction
+    async createReaction(req, res) {
         try {
-            const ThoughtData = await Thought.findById(req.params.thoughtId)
-            if (!ThoughtData) {
-                return res.status(404).json({ message: 'No thought found with that id' });
-            }
-
-            ThoughtData.reactions.push(req.body)
-            const UpdatedThoughtData = await ThoughtData.save();
-
-            res.json(UpdatedThoughtData)
-
+          const { thoughtId } = req.params;
+          const { reactionBody, username } = req.body;
+      
+       
+          const newReaction = {
+            reactionBody,
+            username,
+          };
+      
+         
+          const updatedThought = await Thought.findByIdAndUpdate(
+            thoughtId,
+            { $push: { reactions: newReaction } },
+            { new: true }
+          );
+      
+          if (!updatedThought) {
+            return res.status(404).json({ message: 'No thought found with that id' });
+          }
+      
+          res.json(updatedThought);
         } catch (err) {
-            res.status(500).json(err)
+          res.status(500).json(err);
         }
-    }
-    //delete reaction
+      },
+      //delete reaciton
+      
+      async deleteReaction(req, res) {
+        try {
+          const { thoughtId, reactionId } = req.params;
+      
+          
+          const updatedThought = await Thought.findByIdAndUpdate(
+            thoughtId,
+            { $pull: { reactions: { reactionId } } },
+            { new: true }
+          );
+      
+          if (!updatedThought) {
+            return res.status(404).json({ message: 'No thought found with that id' });
+          }
+      
+          res.json(updatedThought);
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      },
 
 }
