@@ -39,3 +39,5 @@ thoughtSchema.virtual('reactionCount').get(function () {
 function dateFormat(timestamp) {
   return new Date(timestamp).toLocaleString();
 }
+
+module.exports = thoughtSchema;

@@ -32,3 +32,5 @@ const reactionSchema = new Schema(
 function dateFormat(timestamp) {
   return new Date(timestamp).toLocaleString();
 }
+
+module.exports = reactionSchema;

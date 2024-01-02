@@ -41,3 +41,5 @@ const userSchema = new Schema (
       return this.friends.length;
     }
 );
+
+module.exports = userSchema;
