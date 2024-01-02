@@ -46,10 +46,10 @@ module.exports = {
 
     //delete user
 
-    async createUser(req, res) {
+    async deleteUser(req, res) {
         try {
             const UserData = await User.findByIdAndDelete({ _id: req.params.UserId });
-            if (!user) {
+            if (!UserData) {
                 return res.status(404).json({ message: 'No user found with that id' });
             }
             res.json({ message: 'Deleted User'});
@@ -62,7 +62,7 @@ module.exports = {
 
     //update user
 
-    async createUser(req, res) {
+    async updateUser(req, res) {
         try {
             const UserData = await User.findOneAndUpdate(
                 { _id: req.params.userId },
@@ -70,7 +70,7 @@ module.exports = {
                 { runValidators: true, new: true}
                 );
 
-            if (!user) {
+            if (!UserData) {
                 return res.status(404).json({ message: 'No user found with that id' });
             }
             res.json(UserData);
