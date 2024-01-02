@@ -40,4 +40,6 @@ function dateFormat(timestamp) {
   return new Date(timestamp).toLocaleString();
 }
 
-module.exports = thoughtSchema;
+const Thought = model('thought', thoughtSchema)
+
+module.exports = Thought;
