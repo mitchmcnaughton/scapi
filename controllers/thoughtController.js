@@ -18,7 +18,7 @@ module.exports = {
 
     async getSingleThought(req, res) {
         try {
-            const thoguht = await Thought.findOne({ _id: req.params.ThoughtId })
+            const thoguht = await Thought.findOne({ _id: req.params.thoughtId })
                 
             if (!thought) {
                 return res.status(404).json({ message: 'No thought found with that id' });
@@ -48,7 +48,7 @@ module.exports = {
 
     async deleteThought(req, res) {
         try {
-            const ThoughtData = await Thought.findByIdAndDelete({ _id: req.params.ThoughtId });
+            const ThoughtData = await Thought.findByIdAndDelete({ _id: req.params.thoughtId });
             if (!ThoughtData) {
                 return res.status(404).json({ message: 'No user found with that id' });
             }

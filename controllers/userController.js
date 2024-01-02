@@ -48,7 +48,7 @@ module.exports = {
 
     async deleteUser(req, res) {
         try {
-            const UserData = await User.findByIdAndDelete({ _id: req.params.UserId });
+            const UserData = await User.findByIdAndDelete({ _id: req.params.userId });
             if (!UserData) {
                 return res.status(404).json({ message: 'No user found with that id' });
             }
