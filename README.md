@@ -12,10 +12,12 @@
    - [Questions](#questions) 
         
 ## Installation
-     make sure mongodb is running and run npm run start from terminal
+     in terminal type "mongod" to make sure mongod is running then in a seperate instance of the terminal type "npm run start"
         
 ## Usage
-    used for a hypothetical social network site test in insomnia for  routes
+      used for a hypothetical social network site,
+    use insomnia to test routes as shown in video
+    [here](https://drive.google.com/file/d/1pyyYbjzL2LxBov6Am9ZGgEOfxxd_e2o0/view)
         
 ## Contributing
     
